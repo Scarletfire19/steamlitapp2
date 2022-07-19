@@ -7,6 +7,8 @@ import io
 import numpy as np
 import pandas as pd
 from scipy.spatial import distance
+import seaborn as sns
+from matplotlib import pyplot as plt
 
 
 
@@ -30,6 +32,8 @@ if Tools == "Euclidean":
   deuclidean=distance.cdist(dfnext25,dfnext25, metric='euclidean')
   dmateuclidean=pd.DataFrame(deuclidean)
   st.dataframe(dmateuclidean)
+  fig1=sns.clustermap(dmateuclidean,figsize=(20, 30))
+  st.pyplot(fig1)
 
 elif Tools == "braycurtis":
   #braycurtis
