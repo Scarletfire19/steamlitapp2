@@ -21,6 +21,8 @@ Tools = st.selectbox("Choose your Tool", ['Euclidean','braycurtis','canberra','c
 
 dfnext25=input.drop(columns=input.columns[0], axis=1, inplace=True)
 
+st.dataframe(dfnext25)
+
 if Tools == "Euclidean":
   #euclidean
   deuclidean=distance.cdist(dfnext25,dfnext25, metric='euclidean')
