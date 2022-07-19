@@ -21,6 +21,8 @@ if uploaded_file is not None:
 
 Tools = st.selectbox("Choose your Tool", ['Euclidean','braycurtis','canberra','chebyshev']) 
 
+#dfcurrentgroup=input.groupby(['DNA sample ethnicity']).mean().reset_index()
+
 dfnext25 = input.iloc[:,1:]
 
 #dfnext25=input.drop(columns=input.columns[0], axis=1, inplace=True)
@@ -59,3 +61,16 @@ elif Tools == "chebyshev":
   st.dataframe(dmatchebyshev)
   fig4=sns.clustermap(dmatchebyshev,figsize=(20, 30))
   st.pyplot(fig4)
+
+     
+Settools = st.selectbox("Choose your Tool", ['dice','braycurtis']) 
+
+if Settools == "dice":
+     pdice = np.zeros((len(input),len(input)))
+     for i in range(len(input)):
+          for j in range(len(input)):
+               pdice[i][j]=distance.dice(input.loc[[j]],input.loc[[i]])          
+     distmatdice=pd.DataFrame(pdice)
+     st.dataframe(distmatdice)
+     fig11=sns.clustermap(distmatdice,figsize=(20, 30))
+     st.pyplot(fig11)
