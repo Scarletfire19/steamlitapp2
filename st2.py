@@ -10,8 +10,6 @@ from scipy.spatial import distance
 
 
 
-st.markdown(page_bg_img, unsafe_allow_html=True)
-
 st.title("App")
 
 uploaded_file = st.file_uploader("Enter G25 co-ordinates")
