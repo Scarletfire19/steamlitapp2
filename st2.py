@@ -63,9 +63,9 @@ elif Tools == "chebyshev":
   st.pyplot(fig4)
 
      
-Settools = st.selectbox("Choose your Tool", ['dice','braycurtis']) 
+Settools = st.selectbox("Choose your Tool", ['Dice','Hamming']) 
 
-if Settools == "dice":
+if Settools == "Dice":
      pdice = np.zeros((len(input),len(input)))
      for i in range(len(input)):
           for j in range(len(input)):
@@ -74,6 +74,7 @@ if Settools == "dice":
      st.dataframe(distmatdice)
      fig11=sns.clustermap(distmatdice,figsize=(20, 30))
      st.pyplot(fig11)
+     
      
 elif Settools == "Hamming":
      phamming=np.zeros((len(input),len(input)))
