@@ -74,3 +74,14 @@ if Settools == "dice":
      st.dataframe(distmatdice)
      fig11=sns.clustermap(distmatdice,figsize=(20, 30))
      st.pyplot(fig11)
+     
+elif Tools == "Hamming":
+     phamming=np.zeros((len(input),len(input)))
+     for i in range(len(input)):
+          for j in range(len(input)):
+               phamming[i][j]=distance.hamming(input.loc[[j]],input.loc[[i]])
+     distmathamming=pd.DataFrame(phamming)
+     st.dataframe(distmathamming)
+     
+     fig12=sns.clustermap(distmathamming,figsize=(20, 30))
+     st.pyplot(fig12)
