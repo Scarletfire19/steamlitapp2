@@ -75,7 +75,7 @@ if Settools == "dice":
      fig11=sns.clustermap(distmatdice,figsize=(20, 30))
      st.pyplot(fig11)
      
-elif Tools == "Hamming":
+elif Settools == "Hamming":
      phamming=np.zeros((len(input),len(input)))
      for i in range(len(input)):
           for j in range(len(input)):
