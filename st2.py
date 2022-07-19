@@ -40,15 +40,22 @@ elif Tools == "braycurtis":
   dbraycurtis=distance.cdist(dfnext25,dfnext25, metric='braycurtis')
   dmatbraycurtis=pd.DataFrame(dbraycurtis)
   st.dataframe(dmatbraycurtis)
+  st.dataframe(dmatbraycurtis)
+  fig2=sns.clustermap(dmatbraycurtis,figsize=(20, 30))
+  st.pyplot(fig2)
 
 elif Tools == "canberra":
   #canberra
   dcanberra=distance.cdist(dfnext25,dfnext25, metric='canberra')
   dmatcanberra=pd.DataFrame(dcanberra)
   st.dataframe(dmatcanberra)
+  fig3=sns.clustermap(dmatcanberra,figsize=(20, 30))
+  st.pyplot(fig3)
 
 elif Tools == "chebyshev":
   #chebyshev
   dchebyshev=distance.cdist(dfnext25,dfnext25, metric='chebyshev')
   dmatchebyshev=pd.DataFrame(dchebyshev)
   st.dataframe(dmatchebyshev)
+  fig4=sns.clustermap(dmatchebyshev,figsize=(20, 30))
+  st.pyplot(fig4)
