@@ -24,8 +24,18 @@ Tools = st.selectbox("Choose your Tool", ['Euclidean','braycurtis','canberra','c
 #dfcurrentgroup=input.groupby(['DNA sample ethnicity']).mean().reset_index()
 
 #a1=input.columns[1]
-a1=input.iloc[:,2]
-st.dataframe(a1)
+a0=input.iloc[:,0]
+
+a1=input.iloc[:,1]
+range1=max(a1)-min(a1)
+
+a2=input.iloc[:,2]
+range2=max(a2)-min(a2)
+
+dimension = st.number_input("ST Cube Dimensions")
+
+res1=range1/dimension
+res2=range2/dimension
 
 dfnext25 = input.iloc[:,1:]
 
