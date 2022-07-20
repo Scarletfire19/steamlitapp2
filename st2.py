@@ -23,7 +23,8 @@ Tools = st.selectbox("Choose your Tool", ['Euclidean','braycurtis','canberra','c
 
 #dfcurrentgroup=input.groupby(['DNA sample ethnicity']).mean().reset_index()
 
-a1=input.columns[1]
+#a1=input.columns[1]
+a1=input.iloc[:,2]
 st.dataframe(a1)
 
 dfnext25 = input.iloc[:,1:]
